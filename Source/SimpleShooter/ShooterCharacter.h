@@ -26,4 +26,22 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+private:
+	UPROPERTY(EditAnywhere)
+	bool bMouseInvertPitch = true;
+
+	UPROPERTY(EditAnywhere)
+	bool bGamepadInvertPitch = false;
+
+	UPROPERTY(EditAnywhere)
+	float RotationRate = 20.f;
+
+	// Movement Actions
+	void MoveForward(float AxisValue);
+	void MoveRight(float AxisValue);
+	void LookUp(float AxisValue);
+	void LookRight(float AxisValue);
+	void LookUpRate(float AxisValue);
+	void LookRightRate(float AxisValue);
+
 };
